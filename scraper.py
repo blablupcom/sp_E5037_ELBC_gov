@@ -100,7 +100,7 @@ soup = BeautifulSoup(html, 'lxml')
 #### SCRAPE DATA
 import requests  # import requests to get data
 
-html = requests.get(urls)
+html = requests.get(urls, verify=False)
 soup = BeautifulSoup(html.text, 'lxml')
 pageLinks = soup.findAll('a', href=True)
 for pageLink in pageLinks:
