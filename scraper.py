@@ -99,9 +99,9 @@ soup = BeautifulSoup(html, 'lxml')
 
 #### SCRAPE DATA
 import requests  # import requests to get data
-
-html = urllib2.urlopen(urls)
-soup = BeautifulSoup(html, 'lxml')
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':RC4-SHA'
+html = requests.get(urls)
+soup = BeautifulSoup(html.text, 'lxml')
 pageLinks = soup.findAll('a', href=True)
 for pageLink in pageLinks:
   pageUrl = 'https://new.enfield.gov.uk'+pageLink['href']
