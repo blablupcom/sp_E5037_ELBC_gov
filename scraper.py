@@ -87,7 +87,7 @@ def convert_mth_strings ( mth_string ):
 #### VARIABLES 1.0
 
 entity_id = "E5037_ELBC_gov"
-urls = "https://new.enfield.gov.uk/services/business-and-licensing/council-contracts-and-procurement/transparency-reports/monthly-report-for-transactions-over-250"
+urls = "https://new.enfield.gov.uk/services/business-and-licensing/council-contracts-and-procurement/transparency-reports/monthly-report-for-transactions-over-250/"
 errors = 0
 data = []
 url = 'http://www.example.com'
@@ -98,8 +98,8 @@ html = urllib2.urlopen(url)
 soup = BeautifulSoup(html, 'lxml')
 
 #### SCRAPE DATA
-import requests  # import requests to get data
-requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':RC4-SHA'
+
+
 html = requests.get(urls)
 soup = BeautifulSoup(html.text, 'lxml')
 pageLinks = soup.findAll('a', href=True)
